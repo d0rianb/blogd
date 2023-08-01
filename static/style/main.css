@@ -1,0 +1,204 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --palette-offgray-100: #e2e5e9;
+    --palette-offgray-200: #c0c5ce;
+    --palette-offgray-300: #9da5b3;
+    --palette-offgray-400: #7b8699;
+    --palette-offgray-500: #4b5361;
+    --palette-offgray-600: #1f293c;
+    --palette-offwhite-100: #f6f5f0;
+    --palette-offwhite-200: #dbd8d3;
+    --palette-offwhite-300: #d0cabc;
+    --palette-offwhite-400: #b6b39f;
+    --palette-offwhite-500: #9c9686;
+    --palette-offwhite-600: #5a574e;
+    --palette-blue-100: #cdf;
+    --palette-blue-200: #8fb5ff;
+    --palette-blue-300: #6295f9;
+    --palette-blue-400: #1d67f6;
+    --palette-blue-500: #084ccf;
+    --palette-blue-600: #053289;
+    --palette-blue-700: #132b63;
+    --palette-blue-800: #1a2742;
+    --palette-purple-100: #f0e5ff;
+    --palette-purple-200: #e2cbff;
+    --palette-purple-300: #bb8dff;
+    --palette-purple-400: #9d5fff;
+    --palette-purple-500: #7013ff;
+    --palette-purple-600: #4f00d8;
+    --palette-purple-700: #360090;
+    --palette-green-100: #d0f6e7;
+    --palette-green-200: #8bdab9;
+    --palette-green-300: #46be8c;
+    --palette-green-400: #00a873;
+    --palette-green-500: #007a50;
+    --palette-green-600: #003d1f;
+    --palette-teal-100: #dffffe;
+    --palette-teal-200: #70f2f3;
+    --palette-teal-300: #00e7e8;
+    --palette-teal-400: #00cbc9;
+    --palette-teal-500: #00999b;
+    --palette-teal-600: #006567;
+    --palette-yellow-100: #fff7d2;
+    --palette-yellow-200: #fff1b6;
+    --palette-yellow-300: #ffe674;
+    --palette-yellow-400: #ffd912;
+    --palette-yellow-500: #ffd000;
+    --palette-yellow-600: #f29500;
+    --palette-yellow-700: #b45800;
+    --palette-yellow-800: #522d0d;
+    --palette-red-100: #fed1ce;
+    --palette-red-200: #fd978b;
+    --palette-red-300: #fa6257;
+    --palette-red-400: #f73c33;
+    --palette-red-500: #b02a21;
+    --palette-red-600: #731508;
+    --red: var(--palette-red-500);
+    --red-light: var(--palette-red-300);
+    --yellow: var(--palette-yellow-500);
+    --yellow-light: var(--palette-yellow-300);
+    --green: var(--palette-green-500);
+    --green-light: var(--palette-green-300);
+    --cyan: var(--palette-teal-500);
+    --cyan-light: var(--palette-teal-300);
+    --blue: var(--palette-blue-500);
+    --blue-light: var(--palette-blue-300);
+    --purple: var(--palette-purple-500);
+    --purple-light: var(--palette-purple-300);
+}
+
+html {
+    --background: var(--palette-offwhite-100);
+    --surface: var(--palette-offwhite-100);
+    --border: var(--palette-offgray-200);
+    --border-accent: rgba(8,76,207,.2);
+    --primary: var(--palette-offgray-600);
+    --secondary: var(--palette-offgray-500);
+    --tertiary: var(--palette-offgray-400);
+    --accent: var(--palette-blue-500);
+    --disabled: var(--palette-offgray-300);
+    --body: var(--palette-offgray-500);
+    --hr: var(--palette-blue-200);
+    --headings: var(--palette-blue-500);
+    --links: var(--palette-blue-500);
+    --counters: var(--palette-offgray-400);
+    --bullets: var(--palette-offgray-400);
+    --blockquote: var(--palette-blue-500);
+    --captions: var(--palette-offgray-400);
+    --code: var(--palette-purple-600);
+    --code-background: var(--palette-purple-100);
+    --scrollbar-background: transparent;
+    --thumb-background: rgba(0,0,0,.3);
+    --button-label: var(--palette-blue-500);
+    --button-background: var(--palette-blue-100);
+    --button-border: var(--palette-blue-200);
+}
+ 
+body {
+    width: 100vw;
+    margin: 0;
+    color: var(--body);
+    background-color: var(--background);
+    font-family: "IBM Plex Sans", "Roboto", "Arial";
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0.75rem;
+    margin-left: .5rem;
+    margin-top: 1.5rem;
+    font-weight: 300;
+    color: var(--headings);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1rem; }
+
+/* First blockquote - subtitle */
+h1 + blockquote, .subtitle {
+    /* border: 0; */
+    padding: .5rem;
+    /* background-color: var(--palette-offgray-100); */
+    display: flex;
+}
+
+p {
+    margin: .5rem;
+    line-height: 1.75;
+}
+
+strong {
+    color: var(--accent);
+    font-weight: normal;
+}
+
+em {
+    display: inline;
+    color: var(--palette-offgray-400);
+}
+
+blockquote {
+    border-left: var(--border-accent) solid 3px;
+    padding: 0 1em;
+    font-style: italic;
+    color: var(--palette-blue-700);
+}
+
+.article {
+    display: flex;
+    flex-flow: column;
+    text-align: justify;
+    justify-self: center;
+    max-width: max(75%, 200px);
+
+    & img {
+        max-width: 75%;
+        mix-blend-mode: darken;
+        margin: auto;
+        padding: initial;
+    }
+
+    & p > img {
+        display: flex;
+        /* For firefox support has it doesn't understand the parent selector below */
+        flex-flow: row wrap;
+        justify-content: center;
+        border-radius: .5rem;
+    }
+    
+    /* paragraphs that contain images */
+    & p:has(> img) {
+        & img > em {
+            display: flex;
+            flex-flow: column wrap;
+            align-self: center;
+
+        }
+    }
+    
+    /* Image caption */
+    /* Could be `img ~ em` but there is a risk of collision with non caption <br> */
+    & img + em, img + br + em {
+        text-align: center;
+        text-decoration: underline;
+        color: var(--captions);
+        margin: auto;
+        display: block;
+    }
+
+}
