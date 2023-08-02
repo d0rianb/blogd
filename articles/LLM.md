@@ -1,12 +1,12 @@
 ---
 author: Dorian Beauchesne
 date: 31/07/2023
-title: Low Language Model
+title: Large Language Model
 language: en
 ---
 
 
-# Low Language Model (LLM)
+# Large Language Model (LLM)
 > The technology behing ChatGPT, Google Bard, Meta Llama and far more.
 
 **Large Language model** is the technology of artificial intelligence often used to work with massive amount of text data. It uses deep neural netwoks. 
