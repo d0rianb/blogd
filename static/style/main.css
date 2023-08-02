@@ -163,9 +163,10 @@ a {
     color: var(--links);
     text-decoration: none;
 
-    &:hover {
-        text-decoration: underline;
-    }
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 sup a {

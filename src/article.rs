@@ -8,6 +8,7 @@ pub struct Article {
     pub title: String,
     pub language: String,
     pub md_content: String,  // markdown article
+    pub description: String,
     pub cached_html: Option<String>, // cache the html version to avoid parsing it at each call
 }
 
@@ -19,41 +20,47 @@ impl Article {
         let mut author = "Unknown author".into();
         let mut date = "Unknown date".into();
         let mut title = "Unknown title".into();
-        let mut language = "fr".into();
+        let mut language = "fr".to_uppercase().into();
+        let mut description = "".into();
 
         for line in md.lines() {
             if line.contains("---") {
                 header_separator_count += 1;
                 continue;
             }
-            if header_separator_count >= 2 { 
-                break;
-            }
-
-            if let Some((_key, _val)) = line.split_once(":") {
-                let key = String::from(_key);
-                let val = String::from(_val);
-                match key.to_lowercase().trim() {
-                    "author" => { author = val },
-                    "date" => { date = val },
-                    "title" => { title = val },
-                    "language" => { language = val },
-                    _ => {}
+            if header_separator_count < 2 { 
+                // Parse metadata        
+                if let Some((_key, _val)) = line.split_once(":") {
+                    let key = String::from(_key);
+                    let val = String::from(_val);
+                    match key.to_lowercase().trim() {
+                        "author" => { author = val },
+                        "date" => { date = val },
+                        "title" => { title = val },
+                        "language" => { language = val.to_uppercase() },
+                        "description" => { description = val },
+                        _ => {}
+                    }
                 }
+            }
+            // if no descrition it take the first quote
+            if line.get(0..1).unwrap_or("") == ">" && &description == "" {
+                description = line[1..].into();
             }
         }
 
         let cached_html = if should_cache { Some(Self::markdown_to_html(&md)) } else { None };
         Self { 
             author, date, title, language, 
+            description,
             md_content: md, 
-            cached_html 
+            cached_html,
         }
     }
 
     pub fn get_content(&self, get_raw: bool) -> String {
         if get_raw { 
-            "<pre>".to_owned() + &self.md_content + "<\\pre>" 
+            self.md_content.clone()
         } else { 
             self.cached_html.clone().unwrap_or(Article::markdown_to_html(&self.md_content))
         }

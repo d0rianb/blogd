@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="../static/style/home.css">
+{% endblock %}
+
+
+{% block content %}
+<section>
+    <h2>Articles : </h2>
+    <ul>
+        {% for (id, article) in articles.iter() %}
+            <li>
+                <a class="card" href="articles/{{ id }}">
+                    <div class="title">{{ article.title }}</div>
+                    <div class="content">{{ article.description }}</div>
+                    <hr>
+                    <div class="info">
+                        <span class="date">{{ article.date }}</span>
+                        <span class="author">{{ article.author }}</span>
+                        <span class="lang">{{ article.language }}</span>
+                    </div>
+                </a>
+            </li>
+        {% endfor %}
+    
+    </ul>
+</section>
+
+{% endblock %}

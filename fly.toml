@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for quiet-violet-259 on 2023-08-02T10:14:17+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "quiet-violet-259"
+primary_region = "cdg"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[env]
+  ADDRESS = "0.0.0.0"
+  PORT = "8080"
+
+[experimental]
+  cmd = "./blogd" # should be the name of the binary you want to run

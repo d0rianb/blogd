@@ -1,5 +1,5 @@
 mod article;
-mod article_template;
+mod templates;
 
 use std::fs;
 use actix_files;
@@ -8,28 +8,23 @@ use actix_web::middleware::{NormalizePath, TrailingSlash};
 use actix_web::web::Data;
 use actix_web::{web, App, HttpRequest, HttpServer, Result, HttpResponse, Responder};
 use actix_web::http::StatusCode;
-use actix_files::NamedFile;
 use article::Article;
-use askama::Template;
+use templates::not_found_template::NotFoundTemplate;
 
 use std::collections::HashMap;
 use std::time::Instant;
 
-use crate::article_template::ArticleTemplate;
+use askama::Template;
 
+use crate::templates::article_template::{ArticleTemplate, RawArticleTemplate};
+use crate::templates::index_template::IndexTemplate;
 
-const ADDRESS: &str = "127.0.0.1";
-const PORT: u16 = 8080;
 const DEBUG : bool = true;
 
 #[derive(Clone)]
 struct AppData {
-    articles: HashMap<String, Article>,
+    pub articles: HashMap<String, Article>,
 }
-
-#[derive(Template, Clone, Debug)]
-#[template(path = "../static/index.html")]
-struct IndexTemplate;
 
 #[inline]
 fn html_response(body: String) -> Result<HttpResponse> {
@@ -40,8 +35,8 @@ fn html_response(body: String) -> Result<HttpResponse> {
     )
 }
 
-async fn get_index(_req: HttpRequest) -> Result<impl Responder> {
-    let template = IndexTemplate { };
+async fn get_index(_req: HttpRequest, app_data: web::Data<AppData>,) -> Result<impl Responder> {
+    let template = IndexTemplate { articles: &app_data.articles };
     let body = template.render().unwrap();
     html_response(body)
 }
@@ -55,8 +50,11 @@ async fn get_article(req: HttpRequest, app_data: web::Data<AppData>, info: web::
     match app_data.articles.get(&normalized_id) {
         Some(article) => { 
             let now = Instant::now();
-            let template = ArticleTemplate::new(&article, get_raw_file);
-            let body = template.render().unwrap();
+            let body = if get_raw_file { 
+                RawArticleTemplate::new(&article).render().unwrap()
+            } else { 
+                ArticleTemplate::new(&article).render().unwrap()
+            };
             let elapsed = now.elapsed();
             println!("Elapsed: {:.2?}", elapsed);
             html_response(body)
@@ -66,9 +64,11 @@ async fn get_article(req: HttpRequest, app_data: web::Data<AppData>, info: web::
 }
 
 async fn not_found(_req: HttpRequest) -> Result<HttpResponse> {
+    let template = NotFoundTemplate { };
+    let body = template.render().unwrap();
     Ok(HttpResponse::build(StatusCode::NOT_FOUND)
         .content_type("text/html; charset=utf-8")
-        .body(include_str!("../static/404.html"))
+        .body(body)
     )
 }
 
@@ -95,16 +95,15 @@ fn init_data(app_data: &mut AppData) {
     }
 }
 
-fn reload_articles_data() -> AppData {
-    let mut app_data = AppData { articles: HashMap::new() };
-    init_data(&mut app_data);
-    app_data
-}
-
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    std::env::set_var("RUST_LOG", "debug");
     env_logger::init();
+    if DEBUG { std::env::set_var("RUST_LOG", "debug") };
+    let port: u16 = std::env::var("PORT")
+        .unwrap_or("8080".into())
+        .parse::<u16>()
+        .unwrap_or(8080);
+    let address: String = std::env::var("ADDRESS").unwrap_or("127.0.0.1".into());
     HttpServer::new(move || {
         let mut app_data = AppData { articles: HashMap::new() };
         init_data(&mut app_data);
@@ -116,7 +115,7 @@ async fn main() -> std::io::Result<()> {
             .route("articles/{article_id}", web::get().to(get_article))
             .default_service(web::route().to(not_found))
     })
-        .bind((ADDRESS, PORT))?
+        .bind((address, port))?
         .run()
         .await
 }

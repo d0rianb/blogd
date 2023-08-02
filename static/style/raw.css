@@ -1,0 +1,14 @@
+main {
+    display: block;
+}
+
+code[class*="language-"], pre[class*="language-"] {
+    background: transparent;    
+    color: #383a42;
+    font-size: .9rem;
+    line-height: 1.25;
+    text-wrap: initial;
+    padding: 0 2em;
+    white-space-collapse: preserve-breaks;
+    white-space: pre-line;
+}

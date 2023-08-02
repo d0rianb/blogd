@@ -27,3 +27,12 @@ The content is composed with
 Footnotes: 
 manual footnotes should be refered here.
 All the miages should automatically have their links here
+
+# TODO
+ [X] pre formarting for md view  
+ [ ] index indexing articles  
+ [ ] metadata view  
+ [ ] Mobile view support
+ [ ] images sourcing   
+ [ ] image size issue  
+ [ ] add article image metadata for index

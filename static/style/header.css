@@ -5,7 +5,7 @@ header {
     font-size: 1.05rem;
     justify-content: space-between;
     background-color: transparent;
-    box-shadow: 0 2px 2px var(--palette-offgray-100);
+    box-shadow: 0 1px 1px var(--palette-offgray-100);
     z-index: 10;
 
     & .title {
@@ -29,11 +29,13 @@ header {
             border-radius: 3px;
             color: var(--accent);
             text-decoration: none;
-            transition:background-color 250ms ease;
-            
-            &:hover {
-                background-color: var(--palette-offwhite-200);
-            }
+            background-color: transparent;
+            transition: background-color 250ms ease;
+
+        }
+        & a:hover {
+            background-color: var(--palette-offwhite-200);
+            text-decoration: none;
         }
     }
 }

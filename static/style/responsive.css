@@ -2,4 +2,12 @@
     body {
         font-size: 0.9em;
     }
+
+    section {
+        width: 100vw;
+
+        & ul {
+            padding: 0.25rem;   
+        }
+    }
 }
