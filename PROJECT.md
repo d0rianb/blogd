@@ -32,7 +32,9 @@ All the miages should automatically have their links here
  [x] pre formarting for md view  
  [x] index indexing articles  
  [x] metadata view 
- [ ] mobile view support
+ [x] mobile view support
  [ ] images sourcing   
- [ ] image size issue  
+ [x] image size issue  
  [ ] add article image metadata for index
+ [ ] styled error pages
+ [x] footnotes 

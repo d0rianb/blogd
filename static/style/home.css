@@ -45,15 +45,8 @@ ul {
         padding: 0.25 0.75rem;
     }
 
-    & .info {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
+    /* .info style is in the main.css cause shared with articles  */
 
-        & .date {
-            font-style: italic;
-        }
-    }
 }
 
 .card:hover {

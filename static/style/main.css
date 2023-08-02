@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+html { font-size: 100%; }
+
 :root {
     --palette-offgray-100: #e2e5e9;
     --palette-offgray-200: #c0c5ce;
@@ -123,7 +125,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--headings);
 }
 
-h1 { font-size: 2.5rem; }
+h1 {font-size: 2.5rem;}
 h2 { font-size: 1.75rem; }
 h3 { font-size: 1.5rem; }
 h4 { font-size: 1.25rem; }
@@ -155,6 +157,7 @@ em {
 blockquote {
     border-left: var(--border-accent) solid 3px;
     padding: 0 1em;
+    margin: 1rem;
     font-style: italic;
     color: var(--palette-blue-700);
 }
@@ -175,15 +178,41 @@ sup a {
     font-size: 0.65rem;
 }
 
+.infos {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    color: var(--tertiary);
+    width: 100%;
+
+    & .date {
+        font-style: italic;
+    }
+
+    & .author:hover {
+        color: var(--accent);
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+
 .article {
     display: flex;
     flex-flow: column;
     text-align: justify;
     justify-self: center;
-    max-width: max(75%, 200px);
+    max-width: max(50%, 200px);
+
+    .infos {
+        padding: 1rem;
+        margin-top: 1rem;
+        border: 1px solid var(--tertiary);
+        border-radius: 5px;
+    }
 
     & img {
-        max-width: 75%;
+        max-width: 50%;
         mix-blend-mode: darken;
         margin: auto;
         padding: initial;

@@ -11,8 +11,8 @@
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {
             delimiters: [
-            {left: '$$', right: '$$', display: true},
-            {left: '$', right: '$', display: false}
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
             ],
             throwOnError : false
         });
@@ -21,15 +21,15 @@
 {% endblock %}
 
 {% block content %}
-        <ul>
-            <li>author: {{ article.author }}</li>
-            <li>date: {{ article.date }}</li>
-            <li>title: {{ article.title }}</li>
-            <li>language: {{ article.language }}</li>
-        </ul>
-    <main>
-        <section class="article">
-            {{ html_content|safe }}
-        </section>
+
+<main>  
+    <section class="article">
+        <div class="infos">
+                <span class="date">{{ article.date }}</span>
+                <span class="author">{{ article.author }}</span>
+                <span class="lang">{{ article.language }}</span>
+        </div>
+        {{ html_content|safe }}
+    </section>
     </main>
 {% endblock %}

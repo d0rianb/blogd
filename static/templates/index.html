@@ -8,7 +8,7 @@
 
 
 {% block content %}
-<section>
+<section id="index">
     <h2>Articles : </h2>
     <ul>
         {% for (id, article) in articles.iter() %}
@@ -16,8 +16,7 @@
                 <a class="card" href="articles/{{ id }}">
                     <div class="title">{{ article.title }}</div>
                     <div class="content">{{ article.description }}</div>
-                    <hr>
-                    <div class="info">
+                    <div class="infos">
                         <span class="date">{{ article.date }}</span>
                         <span class="author">{{ article.author }}</span>
                         <span class="lang">{{ article.language }}</span>

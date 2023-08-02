@@ -104,6 +104,7 @@ async fn main() -> std::io::Result<()> {
         .parse::<u16>()
         .unwrap_or(8080);
     let address: String = std::env::var("ADDRESS").unwrap_or("127.0.0.1".into());
+    println!("Server up and running");
     HttpServer::new(move || {
         let mut app_data = AppData { articles: HashMap::new() };
         init_data(&mut app_data);

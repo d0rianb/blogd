@@ -6,10 +6,10 @@ language: en
 ---
 
 # The principle of Fiber Optic Gyroscope
-> Gyroscope are part of our today life, without us event knowing it.
+> Gyroscope are part of our today life, without us even knowing it.
 
 ## Whats is a gyroscope and and IMU
-An **IMU** (Inertial Mesurement Unit) is *"an electronic device that measures and reports a body's specific force, angular rate using a combination of accelerometers, gyroscopes"*[^1]. It helps devices to know their spatial orientation and movements.  
+An **IMU** (Inertial Mesurement Unit) is *"an electronic device that measures and reports a body's specific force, angular rate using a combination of accelerometers, gyroscopes"[^1]*. It helps devices to know their spatial orientation and movements.  
 They are part of smartphones, aircrafts, rockets and satellites. In fact, this is an IMU defect that cause the crash of the **Ariane 5** during its first flight.
 An IMU basically consists in 2 sensor types : accelerometers and gyroscopes. The accelerometers are used for mesuring translations and the gyroscopes for the rotations. 
 Every IMU is composed with 3 acceloremeters and 3 gyroscopes : one for each axis (`X`, `Y` and `Z`)
@@ -36,7 +36,7 @@ This means that when a solid is rotating, its will is to remain in this state. T
 > "The main properties that an object can experience in any gyroscopic motion are rigidity in space and precession"[^2]. 
 
 ![Gyroscope GIF](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Gyroscope_operation.gif/220px-Gyroscope_operation.gif)  
-*A gyroscope in operation, showing the freedom of rotation in all three axes. The rotor will maintain its spin axis direction regardless of the orientation of the outer frame.*[^2]
+*A gyroscope in operation, showing the freedom of rotation in all three axes. The rotor will maintain its spin axis direction regardless of the orientation of the outer frame.[^2]* 
 
 Gyroscopes are used for stabilization purpose (ex: Steadicam), Heading indicator in aircrafts, calculation the Earth rotation (Gyrocompass), so basically every navigation & orientation fields. We all have gyroscope in our phones to perform screen rotation or to allow developper to developp usefull apps. 
 ![iBeer](https://img.phonandroid.com/2022/01/ibeer-app-iPhone.jpg)  
@@ -69,6 +69,6 @@ The **FOG** provides extremely precise rotational rate information, in part beca
 
 
 
-[^1] https://en.wikipedia.org/wiki/Inertial_measurement_unit  
-[^2] https://en.wikipedia.org/wiki/Gyroscope  
+[^1]: https://en.wikipedia.org/wiki/Inertial_measurement_unit  
+[^2]: https://en.wikipedia.org/wiki/Gyroscope  
 
