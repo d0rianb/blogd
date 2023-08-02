@@ -1,6 +1,9 @@
 mod article;
 mod templates;
 
+#[macro_use]
+extern crate lazy_static;
+
 use std::fs;
 use actix_files;
 

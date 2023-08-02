@@ -71,4 +71,3 @@ The **FOG** provides extremely precise rotational rate information, in part beca
 
 [^1]: https://en.wikipedia.org/wiki/Inertial_measurement_unit  
 [^2]: https://en.wikipedia.org/wiki/Gyroscope  
-
