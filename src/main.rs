@@ -27,9 +27,23 @@ struct AppData {
     articles: HashMap<String, Article>,
 }
 
-async fn get_index(_req: HttpRequest) -> Result<NamedFile> {
-    let index: NamedFile = NamedFile::open("../static/index.html")?;
-    Ok(index)
+#[derive(Template, Clone, Debug)]
+#[template(path = "../static/index.html")]
+struct IndexTemplate;
+
+#[inline]
+fn html_response(body: String) -> Result<HttpResponse> {
+    Ok(
+        HttpResponse::Ok()
+            .content_type("text/html")
+            .body(body)
+    )
+}
+
+async fn get_index(_req: HttpRequest) -> Result<impl Responder> {
+    let template = IndexTemplate { };
+    let body = template.render().unwrap();
+    html_response(body)
 }
 
 async fn get_article(req: HttpRequest, app_data: web::Data<AppData>, info: web::Path<(String, )>) -> Result<impl Responder> {
@@ -45,11 +59,7 @@ async fn get_article(req: HttpRequest, app_data: web::Data<AppData>, info: web::
             let body = template.render().unwrap();
             let elapsed = now.elapsed();
             println!("Elapsed: {:.2?}", elapsed);
-            Ok(
-                HttpResponse::Ok()
-                    .content_type("text/html")
-                    .body(body)
-            )
+            html_response(body)
          },
         None => not_found(req).await
     }

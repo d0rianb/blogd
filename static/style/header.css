@@ -1,0 +1,39 @@
+header {
+    display: flex;
+    width: 100vw;
+    height: 4rem;
+    font-size: 1.05rem;
+    justify-content: space-between;
+    background-color: transparent;
+    box-shadow: 0 2px 2px var(--palette-offgray-100);
+    z-index: 10;
+
+    & .title {
+        padding: 0.25rem;
+        font-size: 2.75rem;
+        font-weight: bold;
+        text-align: center;
+        color: var(--accent);
+    }
+
+    & nav {
+        display: flex;
+        flex-flow: row;
+
+        & > a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            margin: auto;
+            border-bottom: 0 solid transparent;
+            border-radius: 3px;
+            color: var(--accent);
+            text-decoration: none;
+            transition:background-color 250ms ease;
+            
+            &:hover {
+                background-color: var(--palette-offwhite-200);
+            }
+        }
+    }
+}
