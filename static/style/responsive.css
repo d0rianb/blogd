@@ -12,7 +12,7 @@
     }
 
     section.article {
-        max-width: 95vw;
+        width: 95vw;
     }
 
     h1 {font-size: 2rem;}
