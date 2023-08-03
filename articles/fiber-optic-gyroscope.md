@@ -48,11 +48,11 @@ Mechanical gyroscopes (with a spinning wheel) were the first discovered. They pe
 ***Hubble**'s pointing control system* 
 
 But mechanical technologies suffer from vibrations and frictions which lead to innaccuracy and wear. So other types of gyroscope were developped, based on others physics principles : 
- - **MEMS gyroscope** : idea of the *Foucault pendulum* using a vibrating element
- - **VSG** (vibrating structure gyroscope) : uses a resonator made of different metallic alloys
- - **Ring laser gyroscope** : relies on the *Sagnac effect* to measure rotation by measuring the shifting interference pattern of a beam split into two separate beams which travel around the ring in opposite directions
- - **London moment** : relies on the quantum-mechanical phenomenon, whereby a spinning superconductor generates a magnetic field whose axis lines up exactly with the spin axis of the gyroscopic rotor
- - **FOG (Fiber optic gyroscope)**: The one we're interested in today
+ - **MEMS gyroscope** : idea of the *Foucault pendulum* using a vibrating element  
+ - **VSG** (vibrating structure gyroscope) : uses a resonator made of different metallic alloys  
+ - **Ring laser gyroscope** : relies on the *Sagnac effect* to measure rotation by measuring the shifting interference pattern of a beam split into two separate beams which travel around the ring in opposite directions  
+ - **London moment** : relies on the quantum-mechanical phenomenon, whereby a spinning superconductor generates a magnetic field whose axis lines up exactly with the spin axis of the gyroscopic rotor  
+ - **FOG (Fiber optic gyroscope)**: The one we're interested in today  
 
 #### FOG
  The **FOG**, as the **Ring Laser Gyroscope** uses the *Sagnac effect* to detect changes in orientation. The *Sagnac effect* is an interferometry phenomenon that appears between two light beams turning in the opposite direction : $ \mathrm{ \Delta \Phi_{R} = {2\pi DL \over \lambda c}}  $ 

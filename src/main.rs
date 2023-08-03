@@ -59,7 +59,7 @@ async fn get_article(req: HttpRequest, app_data: web::Data<AppData>, info: web::
                 ArticleTemplate::new(&article).render().unwrap()
             };
             let elapsed = now.elapsed();
-            println!("Elapsed: {:.2?}", elapsed);
+            println!("Display {} in {:.2?}", &normalized_id, elapsed);
             html_response(body)
          },
         None => not_found(req).await

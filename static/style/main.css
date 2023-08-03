@@ -176,10 +176,18 @@ blockquote {
     color: var(--palette-blue-700);
 }
 
+/* Inline code but not block code */
+code:not([class]) { 
+    padding: 0.1rem .2rem;
+    border-radius: 3px;
+    color: var(--code);
+    background: var(--code-background);
+  }
+  
+
 a {
     color: var(--links);
     text-decoration: underline;
-
 }
 
 a:hover {

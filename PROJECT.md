@@ -31,11 +31,12 @@ All the miages should automatically have their links here
 # TODO
  [x] pre formarting for md view  
  [x] index indexing articles  
- [x] metadata view 
- [x] mobile view support
+ [x] metadata view   
+ [x] mobile view support  
  [x] automatic images sourcing   
- [x] image size issue  
- [ ] add article image metadata for index
- [ ] styled error pages
- [ ] code block support
- [x] footnotes 
+ [x] image size issue    
+ [ ] add article image metadata for index ?  
+ [ ] styled error pages  
+ [ ] code block support  
+ [x] footnotes  
+ [ ] table of content

@@ -12,7 +12,15 @@ pub struct ArticleTemplate<'a> {
 
 impl<'a> ArticleTemplate<'a> {
     pub fn new(article: &'a Article) -> Self { 
-        Self { article, html_content: article.get_content(false) } 
+        Self { 
+            article, 
+            html_content: Self::preprocess_html(article.get_content(false)) 
+        } 
+    }
+
+    fn preprocess_html(html: String) -> String {
+        // mermaid support
+        html.replace("<pre><code class=\"language-mermaid\">", "<pre class=\"mermaid\"><code>")
     }
 }
 
@@ -26,6 +34,9 @@ pub struct RawArticleTemplate<'a> {
 
 impl<'a> RawArticleTemplate<'a> {
     pub fn new(article: &'a Article) -> Self { 
-        Self { article, html_content: article.get_content(true) } 
+        Self { 
+            article,
+            html_content: article.get_content(true) 
+        } 
     }
 }
