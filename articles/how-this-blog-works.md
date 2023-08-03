@@ -35,6 +35,7 @@ There is multiple **markup languages**, the most known are :
     Which translate to : 
     ![Latex equation 1](https://wikimedia.org/api/rest_v1/media/math/render/svg/a2924f651b5f6459f4831597c2221852e3a16ac1)
     ![Latex equation 2](https://wikimedia.org/api/rest_v1/media/math/render/svg/62fedd1ff5db7186684ec96deffb536d43aa157d)
+    ![Latex equation 3](https://wikimedia.org/api/rest_v1/media/math/render/svg/eb50e7b1caf07ebd6f8dcac70821d886cdab0811)
 
 - **Markdown** : straight forward formating language
     ```md

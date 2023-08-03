@@ -4,7 +4,7 @@
 
 The goal behind this project is to quickly write (well presented) articles and expose them to the Internet.
 
-The site is live at [this url](www.dodax.site).
+The site is live at [this url](https://www.dodax.site).  
 An explanation of how does this blog works is available [here](https://www.dodax.site/articles/how-this-blog-works). The source of this article is avaible under [articles/how-this-blog-works](./articles/how-this-blog-works.md)
 
 #### Detailed Workflow
