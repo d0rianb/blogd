@@ -36,7 +36,8 @@ All the miages should automatically have their links here
  [x] automatic images sourcing   
  [x] image size issue    
  [ ] add article image metadata for index ?  
- [ ] styled error pages  
+ [~] styled error pages  
  [ ] code block support  
  [x] footnotes  
  [ ] table of content
+ [x] Readme

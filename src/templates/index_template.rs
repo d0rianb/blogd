@@ -9,9 +9,3 @@ use crate::article::Article;
 pub struct IndexTemplate<'a> {
     pub articles: &'a HashMap<String, Article>
 }
-
-// impl IndexTemplate {
-//     fn e(&self) {
-//         self.articles.iter()
-//     }
-// }

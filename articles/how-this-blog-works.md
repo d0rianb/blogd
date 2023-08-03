@@ -15,7 +15,7 @@ To do so, articles are simply written ina single *Markdown* file (to view the so
 
 > A markup language is : "a standard text-encoding system consisting of a set of symbols inserted in a text document to control its structure, formatting, or the relationship between its parts."[^1]
 
-There is multiple markup languages, the most known are : 
+There is multiple **markup languages**, the most known are : 
  - **HTML** : The language of the web. Every website is written in HTML.
     ```html 
     <h1>This is a Heading</h1>
@@ -49,7 +49,7 @@ There is multiple markup languages, the most known are :
 *Markdown* has sevaral advantages compared to other markup language, or even plain text. 
 First of all, it's a **simple language** to learn. The basics of the syntax consists in a [simple cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) that can be find everywhere on Internet.   
 Moreover, *Markdown* it has the advantage of beeing pretty **straight forward** : it's easier to be focus on the content when there is no need to care about the styling.  
-With a technical point of view, *Markdown* is simple to parse and thought to automaticaly style, which ensure a **visual coherence** between articles on the blog. This also can be an issue : when it comes to formatting *Markdown* doesn't provide as much freedom as HTML/CSS (even if HTML can be use in *Mardown* files - for safety reasons, HTML content in these blog articles won't be parsed). 
+With a technical point of view, *Markdown* is simple to parse and thought to automaticaly style, which ensure a **visual coherence** between articles on the blog. This also can be an issue : when it comes to formatting *Markdown* doesn't provide as much freedom as *HTML*/*CSS* (even if HTML can be use in *Mardown* files - for safety reasons, *HTML* content in these blog articles won't be parsed). 
 
 So let's take a quick look of how the *Markdown* syntax works.
 
@@ -66,7 +66,7 @@ A very good tool to write *Markdown* is [this](https://github.com/adam-p/markdow
 I use a code editors to write *Markdown* (**Visual Studio Code**), which allows me to have syntax highligting and a live preview of the article. But some other tools exists, for example [this](https://stackedit.io/app)  online app.
 
 ## This blog specificities
-This articles written in *Markdown* can't be displayed in a web browser, because they only take *HTML* files as input. The server transpile every article in an browser-firendly *HTML* page.  
+This articles written in *Markdown* can't be displayed in a web browser, because they only take *HTML* files as input. The server **transpile** every article in an browser-firendly *HTML* page.  
 
 #### Metadata
 But this blog doesn't only raw display the HTML, it can parse some **metadata** located at the top of the *Markdown* article (these metadata won't be rendered):

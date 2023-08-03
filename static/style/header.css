@@ -35,6 +35,7 @@ header {
         }
         & a:hover {
             background-color: var(--palette-offwhite-200);
+            color: var(--accent);
             text-decoration: none;
         }
     }

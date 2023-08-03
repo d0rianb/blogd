@@ -194,6 +194,11 @@ code[class*="language-"] {
     white-space: pre-line !important;
 }
 
+pre.mermaid {
+    display: flex;
+    justify-content: center;
+}
+
 a {
     color: var(--links);
     text-decoration: underline;
