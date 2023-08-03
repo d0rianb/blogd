@@ -12,6 +12,10 @@ ul {
     } 
 }
 
+/* Reset link style */
+a { text-decoration: none; }
+a:hover { color: initial; }
+
 .card {
     display: flex;
     flex-flow: column nowrap;
@@ -51,7 +55,7 @@ ul {
 
 .card:hover {
     text-decoration: none;
-    border: 1px solid var(--palette-offgray-200);
+    border: 1px solid var(--palette-offgray-300);
 
     & .title {
         text-decoration: underline;

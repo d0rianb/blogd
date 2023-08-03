@@ -60,18 +60,30 @@ html { font-size: 100%; }
     --palette-red-400: #f73c33;
     --palette-red-500: #b02a21;
     --palette-red-600: #731508;
-    --red: var(--palette-red-500);
-    --red-light: var(--palette-red-300);
-    --yellow: var(--palette-yellow-500);
-    --yellow-light: var(--palette-yellow-300);
-    --green: var(--palette-green-500);
-    --green-light: var(--palette-green-300);
-    --cyan: var(--palette-teal-500);
-    --cyan-light: var(--palette-teal-300);
-    --blue: var(--palette-blue-500);
-    --blue-light: var(--palette-blue-300);
-    --purple: var(--palette-purple-500);
-    --purple-light: var(--palette-purple-300);
+    --red: var(
+    --palette-red-500);
+    --red-light: var(
+    --palette-red-300);
+    --yellow: var(
+    --palette-yellow-500);
+    --yellow-light: var(
+    --palette-yellow-300);
+    --green: var(
+    --palette-green-500);
+    --green-light: var(
+    --palette-green-300);
+    --cyan: var(
+    --palette-teal-500);
+    --cyan-light: var(
+    --palette-teal-300);
+    --blue: var(
+    --palette-blue-500);
+    --blue-light: var(
+    --palette-blue-300);
+    --purple: var(
+    --palette-purple-500);
+    --purple-light: var(
+    --palette-purple-300);
 }
 
 html {
@@ -87,7 +99,8 @@ html {
     --body: var(--palette-offgray-500);
     --hr: var(--palette-blue-200);
     --headings: var(--palette-blue-500);
-    --links: var(--palette-blue-500);
+    --links: var(--palette-purple-400);
+    --links-hover: var(--palette-purple-500);
     --counters: var(--palette-offgray-400);
     --bullets: var(--palette-offgray-400);
     --blockquote: var(--palette-blue-500);
@@ -146,6 +159,7 @@ p {
 
 strong {
     color: var(--accent);
+    border-radius: 3px;;
     font-weight: normal;
 }
 
@@ -164,12 +178,12 @@ blockquote {
 
 a {
     color: var(--links);
-    text-decoration: none;
+    text-decoration: underline;
 
 }
 
 a:hover {
-    text-decoration: underline;
+    color: var(--links-hover);
 }
 
 sup a {
