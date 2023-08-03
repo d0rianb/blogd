@@ -71,7 +71,10 @@ impl Article {
             illustration_table_html += "\n <h2>Illustations</h2>";
             illustration_table_html += "\n <ol>";
             image_links.iter().for_each(|(name, link)| {
-                illustration_table_html += format!("\n<li><p><a href={}>{}</a></p></li>", link, name).as_str();
+                // Check if link os local or remote
+                if link.starts_with("http") { 
+                    illustration_table_html += format!("\n<li><p><a href={}>{}</a></p></li>", link, name).as_str();
+                }  
             });
         }
         

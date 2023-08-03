@@ -182,8 +182,17 @@ code:not([class]) {
     border-radius: 3px;
     color: var(--code);
     background: var(--code-background);
-  }
-  
+}
+
+pre[class*="language-"] {
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px -2px var(--palette-offgray-200);
+}  
+
+code[class*="language-"] {
+    overflow-x: hidden;
+    white-space: pre-line !important;
+}
 
 a {
     color: var(--links);

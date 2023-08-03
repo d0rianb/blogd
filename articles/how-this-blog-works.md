@@ -62,21 +62,74 @@ For a quick example, here is the source of the top paragraph :
 A very good tool to write *Markdown* is [this](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) page. It reference most of the *Markdown* specificities.  
 ```
 
-### Editor Setup
-I use a code editors to write *Markdown* (**Visual Studio Code**), which allows me to have syntax highligting and a live preview of the article. But some other tools exists, for example [this online app](https://stackedit.io/app).
+#### Editor Setup
+I use a code editors to write *Markdown* (**Visual Studio Code**), which allows me to have syntax highligting and a live preview of the article. But some other tools exists, for example [this](https://stackedit.io/app)  online app.
 
 ## This blog specificities
-This articles written in *Markdown* can't be displayed in a web browser, because they only take *HTML* files as input.
+This articles written in *Markdown* can't be displayed in a web browser, because they only take *HTML* files as input. The server transpile every article in an browser-firendly *HTML* page.  
 
-### Metadata
+#### Metadata
+But this blog doesn't only raw display the HTML, it can parse some **metadata** located at the top of the *Markdown* article (these metadata won't be rendered):
+```yaml
+---
+author: Dorian Beauchesne
+date: 02/08/2023
+title: How does this blog works ?
+language: en
+description: Technical explanation of this blog internal behavior and tutorial of writting an artical in Markdown
+---
+```
+These metadata will be useful for the website to display the information about an article. These metadata are optional but nonetheless recommended.  
+If no description is provided, the first quote (`>`) will be used.
+
+#### Table of illustration & footnotes
+All the footnotes contains & referenced in the article will appear at the end of the article : 
+```md
+This is a footnotes[^1].
+
+[^1]: Link_of_the_note
+```
+Be careful, if the note is not used in the content, the link won't be referenced in the footer.
+
+In addition to footnotes, all the external images that you will use in the article will be referenced in an **illustration table automatically generated** by the blog. 
+```md
+![Alt text](link_to_the_image)
+```
+ The illustration table is added to the footer, just after the footnotes.  
+
+#### Equations & code
+According to *Mardown* syntax, this blog supports equations (*TeX*), and code snippets : 
+~~~md
+Inline Equation : $ a = ax + b $
+Block equation : $$ y = f(ax^2 + bx + c) $$
+
+Code snippet : 
+```python
+    def f(x):
+        return x**2 + 10
+```
+~~~
+[Here](https://katex.org/docs/supported) is a list of all the supported equation symbol, and [here](https://github.com/jincheng9/markdown_supported_languages) is one of supported languages.
+
+
+#### Graphs
+This blog also support [Mermaid](https://mermaid.js.org/) graphs. Here is the example of one describing the workflow (a simplify version; the real one can be find [here](https://github.com/d0rianb/blogd/blob/master/README.md)) of this blog.
+
+~~~md
+```mermaid
+flowchart LR
+A[Markdown article] ==>|Compile| AB[Content] ==>|Article| B[HTML Page]
+A -->|Parse| C[Metadata] -->|Header| B
+A -->|Detect| D[Illustration table] -->|footer| B
+```
+~~~
 
 ```mermaid
 flowchart LR
-
-A[Hard] -->|Text| B(Round);
-B --> C{Decision};
-C -->|One| D[Result 1];
-C -->|Two| E[Result 2];
+A[Markdown article] ==>|Compile| AB[Content] ==>|Article| B[HTML Page]
+A -->|Parse| C[Metadata] -->|Header| B
+A -->|Detect| D[Illustration table] -->|footer| B
 ```
+
 
 [^1]: https://www.britannica.com/technology/markup-language
