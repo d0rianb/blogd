@@ -165,14 +165,11 @@ blockquote {
 }
 
 /* Inline code but not block code */
-code:not([class]) {
+code:not([class]) { 
     padding: 0.1rem .2rem;
     border-radius: 3px;
-    color: code:not(pre code) { color: #8f310c;
-    background: #fff4e6;
-    padding: 1px 2px;
-    border-radius: 2px;};
-    background: #fff4e6;
+    color: var(--code);
+    background: var(--code-background);
 }
 
 pre[class*="language-"] {
