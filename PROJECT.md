@@ -26,7 +26,7 @@ The content is composed with
 
 Footnotes: 
 manual footnotes should be refered here.
-All the miages should automatically have their links here
+All the images should automatically have their links here
 
 # TODO
  [x] pre formarting for md view  
@@ -41,3 +41,4 @@ All the miages should automatically have their links here
  [x] footnotes  
  [ ] table of content
  [x] Readme
+ [ ] Create cache folder to bake HTML article and lower the memory footprint

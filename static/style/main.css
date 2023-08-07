@@ -60,34 +60,22 @@ html { font-size: 100%; }
     --palette-red-400: #f73c33;
     --palette-red-500: #b02a21;
     --palette-red-600: #731508;
-    --red: var(
-    --palette-red-500);
-    --red-light: var(
-    --palette-red-300);
-    --yellow: var(
-    --palette-yellow-500);
-    --yellow-light: var(
-    --palette-yellow-300);
-    --green: var(
-    --palette-green-500);
-    --green-light: var(
-    --palette-green-300);
-    --cyan: var(
-    --palette-teal-500);
-    --cyan-light: var(
-    --palette-teal-300);
-    --blue: var(
-    --palette-blue-500);
-    --blue-light: var(
-    --palette-blue-300);
-    --purple: var(
-    --palette-purple-500);
-    --purple-light: var(
-    --palette-purple-300);
+    --red: var(--palette-red-500);
+    --red-light: var(--palette-red-300);
+    --yellow: var(--palette-yellow-500);
+    --yellow-light: var(--palette-yellow-300);
+    --green: var(--palette-green-500);
+    --green-light: var(--palette-green-300);
+    --cyan: var(--palette-teal-500);
+    --cyan-light: var(--palette-teal-300);
+    --blue: var(--palette-blue-500);
+    --blue-light: var(--palette-blue-300);
+    --purple: var(--palette-purple-500);
+    --purple-light: var(--palette-purple-300);
 }
 
 html {
-    --background: var(--palette-offwhite-100);
+    --background: rgb(248, 249, 250);
     --surface: var(--palette-offwhite-100);
     --border: var(--palette-offgray-200);
     --border-accent: rgba(8,76,207,.2);
@@ -118,7 +106,7 @@ body {
     width: 100vw;
     margin: 0;
     color: var(--body);
-    background-color: var(--background);
+    background-color: rgb(248, 249, 250);
     font-family: "IBM Plex Sans", "Roboto", "Arial";
     font-weight: 400;
     overflow-x: hidden;
@@ -177,11 +165,14 @@ blockquote {
 }
 
 /* Inline code but not block code */
-code:not([class]) { 
+code:not([class]) {
     padding: 0.1rem .2rem;
     border-radius: 3px;
-    color: var(--code);
-    background: var(--code-background);
+    color: code:not(pre code) { color: #8f310c;
+    background: #fff4e6;
+    padding: 1px 2px;
+    border-radius: 2px;};
+    background: #fff4e6;
 }
 
 pre[class*="language-"] {
