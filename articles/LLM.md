@@ -28,7 +28,7 @@ Basically, **transformers** are encoder/decoder blocks that process data and all
 The classic encoding algorithm is **bytes-pair** encoding. The output of the encoding block is a "embedded vector", which is a dense and continious representation of each word.
 
 ### Attention
-They are using a concept calaled **self-attention** to find relationship between different tokens. The attention mechanism allows the network to focus on certain sequences of the input.
+They are using a concept called **self-attention** to find relationship between different tokens. The attention mechanism allows the network to focus on certain sequences of the input.
 
 It uses 3 ponderation matrices to ponderate the inputs : **Q**uery, **K**ey & **V**alue.  
 The **Q**uery matrix represents the importance of each word , the **K**ey matrix represents the influence of each word on the others and the output of the attention mechanism is obtained by calculating **V = f(Q * K)**.
